@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "seatsio-angular": [
+        "dist/seatsio-angular"
+      ],
+      "seatsio-angular/*": [
+        "dist/seatsio-angular/*"
+      ]
+    }
   }
 }
