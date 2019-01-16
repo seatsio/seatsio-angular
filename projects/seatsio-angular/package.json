@@ -1,6 +1,21 @@
 {
   "name": "seatsio-angular",
   "version": "0.0.1",
+  "author": "Seatsio",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seatsio/seatsio-angular.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seatsio/seatsio-angular/issues"
+  },
+  "keywords": [
+    "angular",
+    "seatsio",
+    "typescript",
+    "javascript"
+  ],
+  "homepage": "https://github.com/seatsio/seatsio-angular",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
