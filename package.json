@@ -4,8 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "prestart": "ng build seatsio-angular",
     "build": "ng build",
-    "test": "ng test",
+    "test": "ng test seatsio-angular",
+    "pretest": "ng build seatsio-angular",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
