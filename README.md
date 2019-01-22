@@ -5,8 +5,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Build library
 
-`ng build seatsio-angular`
+`npm run build`
 
-## Run test server
+## Run tests
 
-`ng serve`
+`npm run test`
+
+## Run test application
+
+`npm run testApp`

@@ -10,7 +10,7 @@ import {SeatsioService} from '../seatsio.service';
 export class SeatsioDesignerComponent implements OnInit {
   @Input() designerKey: String;
   @Input() id: String = 'chart';
-  @Input() className: String;
+  @Input() class: String;
   @Input() chartJsUrl: String;
 
   seatsioService: SeatsioService;
@@ -26,7 +26,7 @@ export class SeatsioDesignerComponent implements OnInit {
       chartJsUrl: this.chartJsUrl
     };
 
-    this.seatsioService.createChart(config).then(res => {
+    this.seatsioService.showDesigner(config).then(res => {
       console.log(res);
     });
   }

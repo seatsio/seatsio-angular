@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "prestart": "ng build seatsio-angular",
     "test": "ng test seatsio-angular",
     "pretest": "ng build seatsio-angular",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "pretestApp": "ng build seatsio-angular",
     "testApp": "ng serve testApp"
   },
   "private": true,

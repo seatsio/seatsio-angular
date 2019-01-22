@@ -8,10 +8,17 @@ declare var seatsio: any;
 export class SeatsioService implements OnInit, OnDestroy {
   chart: any;
 
-  async createChart(config) {
+  async showDesigner(config) {
     const seatsioInstance = await this.getSeatsio(config.chartJsUrl);
 
     const chart = new seatsioInstance.SeatingChartDesigner(config).render();
+    return chart;
+  }
+
+  async showSeatingChart(config) {
+    const seatsioInstance = await this.getSeatsio(config.chartJsUrl);
+
+    const chart = new seatsioInstance.SeatingChart(config).render();
     return chart;
   }
 

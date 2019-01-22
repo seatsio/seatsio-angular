@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'testApp';
+  config = {
+    publicKey: "publicDemoKey",
+    chartJsUrl: "https://cdn-staging.seatsio.net/chart.js",
+    event: "fullExampleWithoutSectionsEvent",
+    onRenderStarted: () => {
+      console.info('Render Started')
+    },
+    onChartRendered: () => {
+      console.info('Render Finished')
+    },
+  }
 }
