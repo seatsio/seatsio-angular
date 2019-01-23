@@ -1,1 +1,144 @@
-# seatsio-angular
+# seatsio-angular, the official Seats.io Angular 7 wrapper
+
+Angular 7 wrapper for rendering [Seats.io](https://www.seats.io) seating charts. Brought to you by the Seats.io team.
+
+# Installation
+
+```
+npm install --save @seatsio/seatsio-angular
+```
+
+# Usage
+
+## Regular charts
+
+Minimal:
+
+Make sure you expose `config` in your component. For example:
+
+```js
+config = {
+    publicKey: "<yourPublicKey>",
+    event: "<yourEventKey>"
+  }
+```
+
+```html
+<si-seatsio-seating-chart
+    [config]="config"
+></si-seatsio-event-manager>
+```
+
+
+
+Custom chart div ID:
+
+```html
+<si-seatsio-seating-chart
+    id="<customId>"
+    [config]="config"
+></si-seatsio-event-manager>
+```
+
+Custom chart div class:
+
+```html
+<si-seatsio-seating-chart
+    class="<customClass>"
+    [config]="config"
+></si-seatsio-event-manager>
+```
+
+`onRenderStarted` is fired when the chart has started loading, but hasn't rendered yet:
+
+```js
+config = {
+    publicKey: "<yourPublicKey>",
+    event: "<yourEventKey>",
+    onRenderStarted: (chart) => {
+      console.info('Render Started')
+    }
+  }
+```
+
+If you store the chart object that's passed to `onRenderStarted`, you can access the properties defined on the  wrapped `seatsio.SeatingChart`:
+
+```js
+let chart = null
+
+config = {
+    publicKey: "<yourPublicKey>",
+    event: "<yourEventKey>",
+    onRenderStarted: {createdChart => { chart = createdChart }}
+  }
+```
+
+`onChartRendered` is fired when the chart is rendered successfully:
+
+```js
+config = {
+    publicKey: "<yourPublicKey>",
+    event: "<yourEventKey>",
+    onRenderRendered: (chart) => {
+      console.info('Render Finished')
+    }
+  }
+```
+
+Other parameters are supported as well. For a full list, check https://docs.seats.io/docs/renderer-configure-your-floor-plan
+
+```js
+config = {
+    publicKey: "<yourPublicKey>",
+    event: "<yourEventKey>",
+    pricing: {[
+        {'category': 1, 'price': 30},
+        {'category': 2, 'price': 40},
+        {'category': 3, 'price': 50}
+    ]},
+    priceFormatter: price => ('$' + price)
+  }
+```
+
+## Event manager
+
+```js
+eventManagerConfig = {
+  secretKey: "<yourSecretKey>",
+  event: "<yourEventKey>",
+  mode: "<manageObjectStatus or another mode>"
+}
+```
+
+```html
+<si-seatsio-event-manager
+  [config]="config"
+></si-seatsio-event-manager>
+```
+
+Other parameters are supported as well. For a full list, check https://docs.seats.io/docs/configuring-event-manager
+
+
+
+## Seating Chart Designer
+
+To embed the seating chart designer for the purpose of creating a new chart, do this:
+
+```html
+<si-seatsio-designer
+  designerKey="<yourDesignerKey>"
+></si-seatsio-designer>
+```
+
+To be able to edit a chart from an embedded designer, you need to specify the chart to load:
+ 
+```html
+<si-seatsio-designer
+  designerKey="<yourDesignerKey>"
+  chartKey="<yourChartKey>"
+></si-seatsio-designer>
+```
+
+    
+
+Other parameters are supported as well. For a full list, check https://docs.seats.io/docs/embedded-designer-configuration

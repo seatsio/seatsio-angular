@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "build": "ng build seatsio-angular",
     "prestart": "ng build seatsio-angular",
     "test": "ng test seatsio-angular",
     "pretest": "ng build seatsio-angular",

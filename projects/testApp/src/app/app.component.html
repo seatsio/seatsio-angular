@@ -11,7 +11,7 @@
     flex-grow: 1;
   }
 </style>
-
+<h1>{{title}}</h1>
 <div class="showDesigner">
   <!--<si-seatsio-designer
     class="designer"
@@ -21,6 +21,11 @@
 
   <si-seatsio-seating-chart
     class="designer"
-    [config]="config"
+    [config]="seatingChartConfig"
   ></si-seatsio-seating-chart>
+
+  <!--<si-seatsio-event-manager
+    class="designer"
+    [config]="eventManagerConfig"
+  ></si-seatsio-event-manager>-->
 </div>
