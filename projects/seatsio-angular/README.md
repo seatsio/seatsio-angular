@@ -40,10 +40,8 @@ config = {
 ```html
 <si-seatsio-seating-chart
     [config]="config"
-></si-seatsio-event-manager>
+></si-seatsio-seating-chart>
 ```
-
-
 
 Custom chart div ID:
 
@@ -51,7 +49,7 @@ Custom chart div ID:
 <si-seatsio-seating-chart
     id="<customId>"
     [config]="config"
-></si-seatsio-event-manager>
+></si-seatsio-seating-chart>
 ```
 
 Custom chart div class:
@@ -60,7 +58,7 @@ Custom chart div class:
 <si-seatsio-seating-chart
     class="<customClass>"
     [config]="config"
-></si-seatsio-event-manager>
+></si-seatsio-seating-chart>
 ```
 
 `onRenderStarted` is fired when the chart has started loading, but hasn't rendered yet:
@@ -131,8 +129,6 @@ eventManagerConfig = {
 ```
 
 Other parameters are supported as well. For a full list, check https://docs.seats.io/docs/configuring-event-manager
-
-
 
 ## Seating Chart Designer
 
