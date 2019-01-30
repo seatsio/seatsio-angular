@@ -1,6 +1,6 @@
 {
-  "name": "seatsio-angular",
-  "version": "1.0.0",
+  "name": "@seatsio/seatsio-angular",
+  "version": "2.0.0",
   "scripts": {
     "ng": "ng",
     "build": "ng build seatsio-angular",
