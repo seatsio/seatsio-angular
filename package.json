@@ -1,5 +1,5 @@
 {
-  "name": "seatsio-ngx",
+  "name": "seatsio-angular",
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
@@ -12,7 +12,7 @@
     "pretestApp": "ng build seatsio-angular",
     "testApp": "ng serve testApp"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~7.2.0",
     "@angular/common": "~7.2.0",
