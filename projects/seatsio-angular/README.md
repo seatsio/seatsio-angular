@@ -10,6 +10,20 @@ npm install --save @seatsio/seatsio-angular
 
 # Usage
 
+Import SeatsioAngularModule in your own module:
+
+```js
+import { SeatsioAngularModule } from '@seatsio/seatsio-angular';
+
+@NgModule({
+  ...
+  imports: [
+    SeatsioAngularModule
+  ]
+  ...
+})
+```
+
 ## Regular charts
 
 Minimal:
