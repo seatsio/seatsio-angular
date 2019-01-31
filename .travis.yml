@@ -3,10 +3,10 @@ node_js:
   - node
 before_script:
   - npm install -g @angular/cli
-after_success:
+script:
   - ng build seatsio-angular
 before_deploy:
-  - cd dist
+  - cd dist/seatsio-angular
 deploy:
   provider: npm
   email: nahuel@seats.io
