@@ -1,14 +1,12 @@
 language: node_js
 node_js:
-  - 10
   - node
 before_script:
   - npm install -g @angular/cli
+after_success:
+  - ng build seatsio-angular
 before_deploy:
   - cd dist
-script:
-  - ng build seatsio-angular
-
 deploy:
   provider: npm
   email: nahuel@seats.io
@@ -16,4 +14,4 @@ deploy:
     secure: wprZ9SQtxXbrIwOYQ2Tl8Vld1D8zW0pruBl9ysMxHMMrpRoYGhN5Edh5RQofDYyQUsrh//gPaQdrwGgv2qQWAdI2373h0MyETQz5JsdZsku7+w83VxIynwDOXa+m0LAdvLCw5WQDzy9ZxnwEeEnaJunEuAw1B1jY/ixZOn9n9nEUa3EZDYWa5t2JsJ3zbXLBUEKGXzPojt9di9mxJZAq5m93nVJILrNmOCh9Rg7HCetjI1La/WskrXUTl7n3B3aaPLykV1wqrex1cCaRcx4hgnAlRXX0PpgS18CM8G06gpudz2vlp9cedC57RQcfzxZ55ts+q891JPOxNmLCdpL+dLx0ngHmfKwyvdDOtPu7wKdcE5evAhK8xvY0y0yfbq3dTKRztpT2vOcxYDHAvFhsRxE206L3Ax0nnpy6xYS98q9oDR37PzD3HVX15sAaV+8dnipaSRqZFMb1CEz5KxDOeIWWzzlO9OdloScy/MRF29GZQ9dDMrVWtWsEBejgThSPViAHPdU8/sSt99RPaoSq3G7JY4Oy5OUG8vq07R8iDnNUXRYo/D7vYO1yvPCnYOBEM+hwztZnGFen2O+nrwj32gyRPQF8KM83ot8eLUgTkFVneqjRvOeUT2aPzi3lTsQVoZ4rQ5KOLPotECEdmyvn8GHuUeQPnQJ4OVo/JND0FGI=
   on:
     tags: true
-    repo: seatsio/seatsio-angular
+  skip_cleanup: true
