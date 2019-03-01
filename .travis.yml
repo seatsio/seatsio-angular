@@ -5,6 +5,7 @@ before_script:
   - npm install -g @angular/cli
 script:
   - ng build seatsio-angular
+  - ng test
 before_deploy:
   - cd dist/seatsio-angular
 deploy:

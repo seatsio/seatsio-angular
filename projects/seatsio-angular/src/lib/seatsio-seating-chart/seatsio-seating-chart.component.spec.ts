@@ -16,6 +16,8 @@ describe('SeatsioSeatingChartComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(SeatsioSeatingChartComponent);
     component = fixture.componentInstance;
+    component.config = {
+    };
     fixture.detectChanges();
   });
 

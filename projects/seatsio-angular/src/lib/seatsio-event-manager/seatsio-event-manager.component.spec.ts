@@ -16,6 +16,8 @@ describe('SeatsioEventManagerComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(SeatsioEventManagerComponent);
     component = fixture.componentInstance;
+    component.config = {
+    };
     fixture.detectChanges();
   });
 
