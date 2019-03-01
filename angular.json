@@ -16,20 +16,11 @@
             "project": "projects/seatsio-angular/ng-package.json"
           }
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/seatsio-angular/src/test.ts",
-            "tsConfig": "projects/seatsio-angular/tsconfig.spec.json",
-            "karmaConfig": "projects/seatsio-angular/karma.conf.js"
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
               "projects/seatsio-angular/tsconfig.lib.json",
-              "projects/seatsio-angular/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -106,58 +97,12 @@
             "browserTarget": "testApp:build"
           }
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/testApp/src/test.ts",
-            "polyfills": "projects/testApp/src/polyfills.ts",
-            "tsConfig": "projects/testApp/tsconfig.spec.json",
-            "karmaConfig": "projects/testApp/karma.conf.js",
-            "styles": [
-              "projects/testApp/src/styles.css"
-            ],
-            "scripts": [],
-            "assets": [
-              "projects/testApp/src/favicon.ico",
-              "projects/testApp/src/assets"
-            ]
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/testApp/tsconfig.app.json",
-              "projects/testApp/tsconfig.spec.json"
+              "projects/testApp/tsconfig.app.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "testApp-e2e": {
-      "root": "projects/testApp-e2e/",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/testApp-e2e/protractor.conf.js",
-            "devServerTarget": "testApp:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "testApp:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "projects/testApp-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]
