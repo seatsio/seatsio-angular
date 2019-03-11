@@ -7,6 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Seatsio-angular test page';
+
+  designerConfig = {
+    class: "designer",
+    designerKey: "demoDesignerKey",
+    chartJsUrl: "https://cdn-staging.seatsio.net/chart.js",
+    onExitRequested: () => console.log("Exit Requested"),
+    onChartCreated: key => console.log("Chart Created", key)
+  }
+
   seatingChartConfig = {
     publicKey: "publicDemoKey",
     chartJsUrl: "https://cdn-staging.seatsio.net/chart.js",

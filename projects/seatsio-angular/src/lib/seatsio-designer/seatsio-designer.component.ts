@@ -8,10 +8,9 @@ import {SeatsioService} from '../seatsio.service';
   providers: [SeatsioService]
 })
 export class SeatsioDesignerComponent implements OnInit {
-  @Input() designerKey: String;
   @Input() id: String = 'chart';
+  @Input() config: object;
   @Input() class: String;
-  @Input() chartJsUrl: String;
 
   seatsioService: SeatsioService;
 
@@ -20,14 +19,11 @@ export class SeatsioDesignerComponent implements OnInit {
   }
 
   ngOnInit() {
-    const config = {
-      divId: this.id,
-      designerKey: this.designerKey,
-      chartJsUrl: this.chartJsUrl
-    };
 
-    this.seatsioService.showDesigner(config).then(res => {
-      console.log(res);
-    });
+    this.config['divId'] = this.config['divId'] || 'chart'
+
+    if ('onRenderStarted' in this.config) this.config['onRenderStarted']()
+
+    this.seatsioService.showDesigner(this.config);
   }
 }
