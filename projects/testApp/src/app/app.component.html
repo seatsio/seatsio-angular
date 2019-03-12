@@ -13,16 +13,15 @@
 </style>
 <h1>{{title}}</h1>
 <div class="showDesigner">
-  <!--<si-seatsio-designer
+  <si-seatsio-designer
     class="designer"
-    designerKey="demoDesignerKey"
-    chartJsUrl="https://cdn-staging.seatsio.net/chart.js"
-  ></si-seatsio-designer>-->
+    [config]="designerConfig"
+  ></si-seatsio-designer>
 
-  <si-seatsio-seating-chart
+  <!--<si-seatsio-seating-chart
     class="designer"
     [config]="seatingChartConfig"
-  ></si-seatsio-seating-chart>
+  ></si-seatsio-seating-chart>-->
 
   <!--<si-seatsio-event-manager
     class="designer"

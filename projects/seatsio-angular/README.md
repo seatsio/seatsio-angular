@@ -47,7 +47,7 @@ Custom chart div ID:
 
 ```html
 <si-seatsio-seating-chart
-    id="<customId>"
+    divId="<customId>"
     [config]="config"
 ></si-seatsio-seating-chart>
 ```
@@ -124,7 +124,7 @@ eventManagerConfig = {
 
 ```html
 <si-seatsio-event-manager
-  [config]="config"
+  [config]="eventManagerConfig"
 ></si-seatsio-event-manager>
 ```
 
@@ -133,20 +133,40 @@ Other parameters are supported as well. For a full list, check https://docs.seat
 ## Seating Chart Designer
 
 To embed the seating chart designer for the purpose of creating a new chart, do this:
-
+```js
+seatingChartConfig = {
+  publicKey: "<yourPublicKey>",
+  event: "<yourEventKey>",
+  onRenderStarted: () => {
+    console.info('Render Started')
+  },
+  onChartRendered: () => {
+    console.info('Render Finished')
+  },
+  priceFormatter: price => ('$' + price)
+}
+```
 ```html
 <si-seatsio-designer
-  designerKey="<yourDesignerKey>"
+  [config]="seatingChartConfig"
 ></si-seatsio-designer>
 ```
 
 To be able to edit a chart from an embedded designer, you need to specify the chart to load:
  
-```html
-<si-seatsio-designer
-  designerKey="<yourDesignerKey>"
-  chartKey="<yourChartKey>"
-></si-seatsio-designer>
+```js
+seatingChartConfig = {
+  publicKey: "<yourPublicKey>",
+  event: "<yourEventKey>",
+  chartKey: "<yourChartKey>",
+  onRenderStarted: () => {
+    console.info('Render Started')
+  },
+  onChartRendered: () => {
+    console.info('Render Finished')
+  },
+  priceFormatter: price => ('$' + price)
+}
 ```
 
     
