@@ -19,7 +19,9 @@ export class SeatsioEventManagerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.config['divId'] = this.config['divId'] || 'chart'
+    if (this.config['divId']) {
+      this.id = this.config['divId'];
+    }
 
     if ('onRenderStarted' in this.config) this.config['onRenderStarted']()
 
