@@ -1,6 +1,6 @@
-# seatsio-angular, the official Seats.io Angular 7 wrapper
+# seatsio-angular, the official Seats.io Angular wrapper
 
-Angular 7 wrapper for rendering [Seats.io](https://www.seats.io) seating charts. Brought to you by the Seats.io team.
+Angular 7, 8 and 9 wrapper for rendering [Seats.io](https://www.seats.io) seating charts. Brought to you by the Seats.io team.
 
 # Installation
 
