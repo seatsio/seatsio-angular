@@ -32,6 +32,14 @@ export class SeatsioService implements OnInit, OnDestroy {
     return chart;
   }
 
+  async showChartManager(config) {
+    const seatsioInstance = await this.getSeatsio(config.chartJsUrl);
+
+    delete config['chartJsUrl'];
+    const chart = new seatsioInstance.ChartManager(config).render();
+    return chart;
+  }
+
   getSeatsio(chartJsUrl) {
     if (typeof seatsio !== 'undefined') {
       return Promise.resolve(seatsio);

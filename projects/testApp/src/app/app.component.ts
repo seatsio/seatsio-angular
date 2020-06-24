@@ -36,6 +36,16 @@ export class AppComponent {
     mode: "manageObjectStatuses",
     onChartRendered: () => {
       console.info('Render Finished')
+    }
+  }
+
+  chartManagerConfig = {
+    secretKey: "demoKey",
+    chartJsUrl: "https://cdn-staging.seatsio.net/chart.js",
+    chart: "demoChartSmallTheatre",
+    mode: "manageRulesets",
+    onChartRendered: () => {
+      console.info('Render Finished')
     },
   }
 }

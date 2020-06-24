@@ -128,7 +128,25 @@ eventManagerConfig = {
 ></si-seatsio-event-manager>
 ```
 
-Other parameters are supported as well. For a full list, check https://docs.seats.io/docs/configuring-event-manager
+Other parameters are supported as well. For a full list, check https://docs.seats.io/docs/event-manager-configuring
+
+## Chart manager
+
+```js
+chartManagerConfig = {
+  secretKey: "<yourSecretKey>",
+  chart: "<yourChartKey>",
+  mode: "manageRulesets"
+}
+```
+
+```html
+<si-seatsio-chart-manager
+  [config]="chartManagerConfig"
+></si-seatsio-chart-manager>
+```
+
+Other parameters are supported as well. For a full list, check https://docs.seats.io/docs/chart-manager-configuring
 
 ## Seating Chart Designer
 
