@@ -13,18 +13,23 @@
 </style>
 <h1>{{title}}</h1>
 <div class="showDesigner">
-  <si-seatsio-designer
+  <!--<si-seatsio-designer
     class="designer"
     [config]="designerConfig"
-  ></si-seatsio-designer>
+  ></si-seatsio-designer>-->
 
   <!--<si-seatsio-seating-chart
     class="designer"
     [config]="seatingChartConfig"
   ></si-seatsio-seating-chart>-->
 
-  <!--<si-seatsio-event-manager
+  <si-seatsio-event-manager
     class="designer"
     [config]="eventManagerConfig"
-  ></si-seatsio-event-manager>-->
+  ></si-seatsio-event-manager>
+
+  <si-seatsio-chart-manager
+    class="designer"
+    [config]="chartManagerConfig"
+  ></si-seatsio-chart-manager>
 </div>
