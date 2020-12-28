@@ -32,7 +32,7 @@ Make sure you expose `config` in your component. For example:
 
 ```js
 config = {
-    publicKey: "<yourPublicKey>",
+    workspaceKey: "<yourWorkspacePublicKey>",
     event: "<yourEventKey>"
   }
 ```
@@ -65,7 +65,7 @@ Custom chart div class:
 
 ```js
 config = {
-    publicKey: "<yourPublicKey>",
+    workspaceKey: "<yourWorkspacePublicKey>",
     event: "<yourEventKey>",
     onRenderStarted: (chart) => {
       console.info('Render Started')
@@ -79,7 +79,7 @@ If you store the chart object that's passed to `onRenderStarted`, you can access
 let chart = null
 
 config = {
-    publicKey: "<yourPublicKey>",
+    workspaceKey: "<yourWorkspacePublicKey>",
     event: "<yourEventKey>",
     onRenderStarted: {createdChart => { chart = createdChart }}
   }
@@ -89,7 +89,7 @@ config = {
 
 ```js
 config = {
-    publicKey: "<yourPublicKey>",
+    workspaceKey: "<yourWorkspacePublicKey>",
     event: "<yourEventKey>",
     onRenderRendered: (chart) => {
       console.info('Render Finished')
@@ -101,7 +101,7 @@ Other parameters are supported as well. For a full list, check https://docs.seat
 
 ```js
 config = {
-    publicKey: "<yourPublicKey>",
+    workspaceKey: "<yourWorkspacePublicKey>",
     event: "<yourEventKey>",
     pricing: {[
         {'category': 1, 'price': 30},
@@ -116,7 +116,7 @@ config = {
 
 ```js
 eventManagerConfig = {
-  secretKey: "<yourSecretKey>",
+  secretKey: "<yourWorkspaceSecretKey>",
   event: "<yourEventKey>",
   mode: "<manageObjectStatus or another mode>"
 }
@@ -134,7 +134,7 @@ Other parameters are supported as well. For a full list, check https://docs.seat
 
 ```js
 chartManagerConfig = {
-  secretKey: "<yourSecretKey>",
+  secretKey: "<yourWorkspaceSecretKey>",
   chart: "<yourChartKey>",
   mode: "manageRulesets"
 }
@@ -153,7 +153,7 @@ Other parameters are supported as well. For a full list, check https://docs.seat
 To embed the seating chart designer for the purpose of creating a new chart, do this:
 ```js
 seatingChartConfig = {
-  publicKey: "<yourPublicKey>",
+  workspaceKey: "<yourWorkspacePublicKey>",
   event: "<yourEventKey>",
   onRenderStarted: () => {
     console.info('Render Started')
@@ -174,7 +174,7 @@ To be able to edit a chart from an embedded designer, you need to specify the ch
  
 ```js
 seatingChartConfig = {
-  publicKey: "<yourPublicKey>",
+  workspaceKey: "<yourWorkspacePublicKey>",
   event: "<yourEventKey>",
   chartKey: "<yourChartKey>",
   onRenderStarted: () => {
