@@ -32,6 +32,7 @@ Make sure you expose `config` in your component. For example:
 
 ```js
 config = {
+    region: "<yourRegion>", // e.g. "eu"
     workspaceKey: "<yourWorkspacePublicKey>",
     event: "<yourEventKey>"
   }
@@ -65,7 +66,8 @@ Custom chart div class:
 
 ```js
 config = {
-    workspaceKey: "<yourWorkspacePublicKey>",
+  region: "<yourRegion>",
+  workspaceKey: "<yourWorkspacePublicKey>",
     event: "<yourEventKey>",
     onRenderStarted: (chart) => {
       console.info('Render Started')
@@ -79,6 +81,7 @@ If you store the chart object that's passed to `onRenderStarted`, you can access
 let chart = null
 
 config = {
+    region: "<yourRegion>",
     workspaceKey: "<yourWorkspacePublicKey>",
     event: "<yourEventKey>",
     onRenderStarted: {createdChart => { chart = createdChart }}
@@ -89,6 +92,7 @@ config = {
 
 ```js
 config = {
+    region: "<yourRegion>",
     workspaceKey: "<yourWorkspacePublicKey>",
     event: "<yourEventKey>",
     onRenderRendered: (chart) => {
@@ -101,6 +105,7 @@ Other parameters are supported as well. For a full list, check https://docs.seat
 
 ```js
 config = {
+    region: "<yourRegion>",
     workspaceKey: "<yourWorkspacePublicKey>",
     event: "<yourEventKey>",
     pricing: {[
@@ -116,6 +121,7 @@ config = {
 
 ```js
 eventManagerConfig = {
+  region: "<yourRegion>",
   secretKey: "<yourWorkspaceSecretKey>",
   event: "<yourEventKey>",
   mode: "<manageObjectStatus or another mode>"
@@ -134,6 +140,7 @@ Other parameters are supported as well. For a full list, check https://docs.seat
 
 ```js
 chartManagerConfig = {
+  region: "<yourRegion>",
   secretKey: "<yourWorkspaceSecretKey>",
   chart: "<yourChartKey>",
   mode: "manageRulesets"
@@ -153,6 +160,7 @@ Other parameters are supported as well. For a full list, check https://docs.seat
 To embed the seating chart designer for the purpose of creating a new chart, do this:
 ```js
 seatingChartConfig = {
+  region: "<yourRegion>",
   workspaceKey: "<yourWorkspacePublicKey>",
   event: "<yourEventKey>",
   onRenderStarted: () => {
@@ -174,6 +182,7 @@ To be able to edit a chart from an embedded designer, you need to specify the ch
  
 ```js
 seatingChartConfig = {
+  region: "<yourRegion>",
   workspaceKey: "<yourWorkspacePublicKey>",
   event: "<yourEventKey>",
   chartKey: "<yourChartKey>",
