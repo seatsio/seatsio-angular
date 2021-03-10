@@ -26,7 +26,7 @@ import { SeatsioAngularModule } from '@seatsio/seatsio-angular';
 
 ## Regular charts
 
-Minimal:
+### Minimal
 
 Make sure you expose `config` in your component. For example:
 
@@ -43,7 +43,19 @@ config = {
 ></si-seatsio-seating-chart>
 ```
 
-Custom chart div ID:
+### Setting the height of the chart
+
+By default, the chart is as wide as its parent div, and as high as the drawing that's rendered.
+
+To set an explicit height, use CSS on the div that gets created by `<si-seatsio-seating-chart>`:
+
+```css
+#chart {
+    height: 800px; // or height: 100%, or height: 100vh, depending on your requirements
+}
+```
+
+### Custom chart div ID
 
 ```html
 <si-seatsio-seating-chart
@@ -52,7 +64,7 @@ Custom chart div ID:
 ></si-seatsio-seating-chart>
 ```
 
-Custom chart div class:
+### Custom chart div class
 
 ```html
 <si-seatsio-seating-chart
@@ -60,6 +72,8 @@ Custom chart div class:
     [config]="config"
 ></si-seatsio-seating-chart>
 ```
+
+### onRenderStarted
 
 `onRenderStarted` is fired when the chart has started loading, but hasn't rendered yet:
 
@@ -85,6 +99,8 @@ config = {
   }
 ```
 
+### onChartRendered
+
 `onChartRendered` is fired when the chart is rendered successfully:
 
 ```js
@@ -96,6 +112,8 @@ config = {
     }
   }
 ```
+
+### Other parameters
 
 Other parameters are supported as well. For a full list, check https://docs.seats.io/docs/renderer-configure-your-floor-plan
 
@@ -187,6 +205,16 @@ seatingChartConfig = {
 }
 ```
 
-    
+### Setting a height
+
+By default, the chart designer gets rendered with a minimal height. To change that, use CSS on the div that gets created by `<si-seatsio-designer>`:
+
+```css
+#chart {
+    height: 800px; // or height: 100%, or height: 100vh, depending on your requirements
+}
+```
+
+### Other parameters
 
 Other parameters are supported as well. For a full list, check https://docs.seats.io/docs/embedded-designer-configuration
