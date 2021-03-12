@@ -11,14 +11,16 @@ export class AppComponent {
   designerConfig = {
     class: "designer",
     designerKey: "demoDesignerKey",
-    chartJsUrl: "https://cdn-staging.seatsio.net/chart.js",
+    chartJsUrl: "https://cdn-staging-{region}.seatsio.net/chart.js",
+    region: "eu",
     onExitRequested: () => console.log("Exit Requested"),
     onChartCreated: key => console.log("Chart Created", key)
   }
 
   seatingChartConfig = {
     publicKey: "publicDemoKey",
-    chartJsUrl: "https://cdn-staging.seatsio.net/chart.js",
+    chartJsUrl: "https://cdn-staging-{region}.seatsio.net/chart.js",
+    region: "eu",
     event: "fullExampleWithoutSectionsEvent",
     onRenderStarted: () => {
       console.info('Render Started')
@@ -31,7 +33,8 @@ export class AppComponent {
 
   eventManagerConfig = {
     secretKey: "demoKey",
-    chartJsUrl: "https://cdn-staging.seatsio.net/chart.js",
+    chartJsUrl: "https://cdn-staging-{region}.seatsio.net/chart.js",
+    region: "eu",
     event: "fullExampleWithoutSectionsEvent",
     mode: "manageObjectStatuses",
     onChartRendered: () => {
@@ -41,7 +44,8 @@ export class AppComponent {
 
   chartManagerConfig = {
     secretKey: "demoKey",
-    chartJsUrl: "https://cdn-staging.seatsio.net/chart.js",
+    chartJsUrl: "https://cdn-staging-{region}.seatsio.net/chart.js",
+    region: "eu",
     chart: "demoChartSmallTheatre",
     mode: "manageRulesets",
     onChartRendered: () => {
