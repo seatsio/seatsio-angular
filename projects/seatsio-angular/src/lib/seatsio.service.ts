@@ -13,8 +13,7 @@ export class SeatsioService implements OnInit, OnDestroy {
 
     delete config['chartJsUrl'];
     delete config['region'];
-    const chart = new seatsioInstance.SeatingChartDesigner(config).render();
-    return chart;
+    return new seatsioInstance.SeatingChartDesigner(config).render();
   }
 
   async showSeatingChart(config) {
@@ -22,8 +21,7 @@ export class SeatsioService implements OnInit, OnDestroy {
 
     delete config['chartJsUrl'];
     delete config['region'];
-    const chart = new seatsioInstance.SeatingChart(config).render();
-    return chart;
+    return new seatsioInstance.SeatingChart(config).render();
   }
 
   async showEventManager(config) {
@@ -31,8 +29,7 @@ export class SeatsioService implements OnInit, OnDestroy {
 
     delete config['chartJsUrl'];
     delete config['region'];
-    const chart = new seatsioInstance.EventManager(config).render();
-    return chart;
+    return new seatsioInstance.EventManager(config).render();
   }
 
   async showChartManager(config) {
@@ -40,8 +37,7 @@ export class SeatsioService implements OnInit, OnDestroy {
 
     delete config['chartJsUrl'];
     delete config['region'];
-    const chart = new seatsioInstance.ChartManager(config).render();
-    return chart;
+    return new seatsioInstance.ChartManager(config).render();
   }
 
   getSeatsio(region, chartJsUrl) {

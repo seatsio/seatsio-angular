@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { SeatsioDesignerComponent } from './seatsio-designer/seatsio-designer.component';
-import { SeatsioSeatingChartComponent } from './seatsio-seating-chart/seatsio-seating-chart.component';
-import { SeatsioEventManagerComponent } from './seatsio-event-manager/seatsio-event-manager.component';
-import { SeatsioChartManagerComponent } from './seatsio-chart-manager/seatsio-chart-manager.component';
+import {NgModule} from '@angular/core';
+import {SeatsioDesignerComponent} from './seatsio-designer/seatsio-designer.component';
+import {SeatsioSeatingChartComponent} from './seatsio-seating-chart/seatsio-seating-chart.component';
+import {SeatsioEventManagerComponent} from './seatsio-event-manager/seatsio-event-manager.component';
+import {SeatsioChartManagerComponent} from './seatsio-chart-manager/seatsio-chart-manager.component';
 
 @NgModule({
   declarations: [
@@ -18,4 +18,5 @@ import { SeatsioChartManagerComponent } from './seatsio-chart-manager/seatsio-ch
     SeatsioChartManagerComponent
   ]
 })
-export class SeatsioAngularModule { }
+export class SeatsioAngularModule {
+}
