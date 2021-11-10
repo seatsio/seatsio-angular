@@ -15,21 +15,28 @@
 <div class="showDesigner">
   <!--<si-seatsio-designer
     class="designer"
-    [config]="designerConfig"
+    [config]="designerConfig()"
+    *ngIf="shown"
   ></si-seatsio-designer>-->
 
-  <!--<si-seatsio-seating-chart
+  <si-seatsio-seating-chart
     class="designer"
-    [config]="seatingChartConfig"
-  ></si-seatsio-seating-chart>-->
+    [config]="seatingChartConfig()"
+    *ngIf="shown"
+  ></si-seatsio-seating-chart>
 
   <!--<si-seatsio-event-manager
     class="designer"
-    [config]="eventManagerConfig"
+    [config]="eventManagerConfig()"
+    *ngIf="shown"
   ></si-seatsio-event-manager>-->
 
-  <si-seatsio-chart-manager
+  <!--si-seatsio-chart-manager
     class="designer"
-    [config]="chartManagerConfig"
-  ></si-seatsio-chart-manager>
+    [config]="chartManagerConfig()"
+    *ngIf="shown"
+  ></si-seatsio-chart-manager-->
+
 </div>
+
+<button (click)="onToggle()">Toggle</button>

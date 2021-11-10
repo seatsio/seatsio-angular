@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {SeatsioService} from '../seatsio.service';
+import {SeatsioComponent} from '../seatsio.component';
 
 @Component({
   selector: 'si-seatsio-designer',
@@ -7,25 +8,13 @@ import {SeatsioService} from '../seatsio.service';
   styleUrls: ['./seatsio-designer.component.css'],
   providers: [SeatsioService]
 })
-export class SeatsioDesignerComponent implements OnInit {
-  @Input() id: String = 'chart';
-  @Input() config: object;
-  @Input() class: String;
-
-  seatsioService: SeatsioService;
+export class SeatsioDesignerComponent extends SeatsioComponent {
 
   constructor(seatsioService: SeatsioService) {
-    this.seatsioService = seatsioService;
+    super(seatsioService);
   }
 
-  ngOnInit() {
-
-    if (this.config['divId']) {
-      this.id = this.config['divId'];
-    }
-
-    if ('onRenderStarted' in this.config) { this.config['onRenderStarted'](); }
-
-    this.seatsioService.showDesigner(this.config);
+  protected render(config: any) {
+    return this.seatsioService.showDesigner(this.config);
   }
 }
