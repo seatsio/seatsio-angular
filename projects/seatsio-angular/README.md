@@ -1,6 +1,9 @@
 # seatsio-angular, the official Seats.io Angular wrapper
 
-Angular 7 or higher wrapper for rendering [Seats.io](https://www.seats.io) seating charts. Brought to you by the Seats.io team.
+Angular wrapper for rendering [Seats.io](https://www.seats.io) seating charts. Brought to you by the Seats.io team.
+
+The minimum Angular version is the [current lowest LTS version](https://angular.io/guide/releases#support-policy-and-schedule) (currently: 11.0.0). 
+Lower versions may work, but are not officially supported.  
 
 # Installation
 
