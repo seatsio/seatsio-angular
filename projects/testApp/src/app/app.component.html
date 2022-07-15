@@ -1,42 +1,40 @@
 <style>
-  .showDesigner {
-    display: flex;
+  .app {
     height: 100vh;
   }
-  .designer {
-    flex-grow: 1;
-    width: 100%;
+  h1 {
+    margin: 0;
+    padding: 10px;
   }
-  .designer > iframe {
-    flex-grow: 1;
+  .showDesigner {
+    height: calc(100vh - 100px)
   }
 </style>
-<h1>{{title}}</h1>
-<div class="showDesigner">
-  <!--<si-seatsio-designer
-    class="designer"
-    [config]="designerConfig()"
-    *ngIf="shown"
-  ></si-seatsio-designer>-->
+<div class="app">
+  <h1>{{title}}</h1>
+  <div class="showDesigner">
+    <!--si-seatsio-designer
+      [config]="designerConfig()"
+      *ngIf="shown"
+    ></si-seatsio-designer-->
 
-  <si-seatsio-seating-chart
-    class="designer"
-    [config]="seatingChartConfig()"
-    *ngIf="shown"
-  ></si-seatsio-seating-chart>
+    <si-seatsio-seating-chart
+      [config]="seatingChartConfig()"
+      *ngIf="shown"
+    ></si-seatsio-seating-chart>
 
-  <!--<si-seatsio-event-manager
-    class="designer"
-    [config]="eventManagerConfig()"
-    *ngIf="shown"
-  ></si-seatsio-event-manager>-->
+    <!--<si-seatsio-event-manager
+      [config]="eventManagerConfig()"
+      *ngIf="shown"
+    ></si-seatsio-event-manager>-->
 
-  <!--si-seatsio-chart-manager
-    class="designer"
-    [config]="chartManagerConfig()"
-    *ngIf="shown"
-  ></si-seatsio-chart-manager-->
+    <!--si-seatsio-chart-manager
+      [config]="chartManagerConfig()"
+      *ngIf="shown"
+    ></si-seatsio-chart-manager-->
 
+  </div>
+  <div>
+    <button (click)="onToggle()">Toggle</button>
+  </div>
 </div>
-
-<button (click)="onToggle()">Toggle</button>
