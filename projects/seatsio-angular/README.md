@@ -42,12 +42,11 @@ config = {
 ```
 
 ```html
-<si-seatsio-seating-chart [config]="config"></si-seatsio-seating-chart>
+<div style="height: 500px">
+  <si-seatsio-seating-chart [config]="config"></si-seatsio-seating-chart>
+</div>
 ```
-
-### Setting the width and height of the chart
-
-The chart uses the 100% of the width and height of the DOM element (e.g. a div) in which you render it. Play with the size of that element
+The chart uses 100% of the width and height of the DOM element (e.g. a div) in which you render it. Play with the size of that element
 to change the chart size.
 
 ### onRenderStarted
