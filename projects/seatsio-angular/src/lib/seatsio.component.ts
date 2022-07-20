@@ -1,16 +1,15 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, ElementRef, Input, OnDestroy, OnInit} from '@angular/core';
 import {SeatsioService} from './seatsio.service';
 
 @Component({template: ''})
 export class SeatsioComponent implements OnInit, OnDestroy {
-  @Input() id: String = 'chart';
+
   @Input() config: object;
-  @Input() class: String;
 
   seatsioService: SeatsioService;
   chart: any;
 
-  constructor(seatsioService: SeatsioService) {
+  constructor(seatsioService: SeatsioService, private elRef: ElementRef) {
     this.seatsioService = seatsioService;
   }
 
@@ -19,9 +18,8 @@ export class SeatsioComponent implements OnInit, OnDestroy {
   }
 
   async ngOnInit() {
-    if (this.config['divId']) {
-      this.id = this.config['divId'];
-    }
+    this.config['divId'] = undefined;
+    this.config['container'] = this.elRef.nativeElement.firstElementChild;
 
     if ('onRenderStarted' in this.config) {
       this.config['onRenderStarted']();

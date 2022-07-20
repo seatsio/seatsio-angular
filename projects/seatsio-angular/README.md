@@ -42,40 +42,12 @@ config = {
 ```
 
 ```html
-<si-seatsio-seating-chart
-    [config]="config"
-></si-seatsio-seating-chart>
+<div style="height: 500px">
+  <si-seatsio-seating-chart [config]="config"></si-seatsio-seating-chart>
+</div>
 ```
-
-### Setting the height of the chart
-
-By default, the chart is as wide as its parent div, and as high as the drawing that's rendered.
-
-To set an explicit height, use CSS on the div that gets created by `<si-seatsio-seating-chart>`:
-
-```css
-#chart {
-    height: 800px; // or height: 100%, or height: 100vh, depending on your requirements
-}
-```
-
-### Custom chart div ID
-
-```html
-<si-seatsio-seating-chart
-    divId="<customId>"
-    [config]="config"
-></si-seatsio-seating-chart>
-```
-
-### Custom chart div class
-
-```html
-<si-seatsio-seating-chart
-    class="<customClass>"
-    [config]="config"
-></si-seatsio-seating-chart>
-```
+The chart uses 100% of the width and height of the DOM element (e.g. a div) in which you render it. Play with the size of that element
+to change the chart size.
 
 ### onRenderStarted
 

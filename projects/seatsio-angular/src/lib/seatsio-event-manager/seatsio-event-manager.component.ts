@@ -1,17 +1,16 @@
-import {Component} from '@angular/core';
+import {Component, ElementRef} from '@angular/core';
 import {SeatsioService} from '../seatsio.service';
 import {SeatsioComponent} from '../seatsio.component';
 
 @Component({
   selector: 'si-seatsio-event-manager',
-  templateUrl: './seatsio-event-manager.component.html',
-  styleUrls: ['./seatsio-event-manager.component.css'],
+  templateUrl: '../seatsio.component.html',
   providers: [SeatsioService]
 })
 export class SeatsioEventManagerComponent extends SeatsioComponent {
 
-  constructor(seatsioService: SeatsioService) {
-    super(seatsioService);
+  constructor(seatsioService: SeatsioService, elRef: ElementRef) {
+    super(seatsioService, elRef);
   }
 
   protected render(config: any) {
