@@ -11,7 +11,7 @@ export class AppComponent {
 
   designerConfig = () => ({
     class: 'designer',
-    designerKey: 'demoDesignerKey',
+    secretKey: 'demoKey',
     chartJsUrl: 'https://cdn-staging-{region}.seatsio.net/chart.js',
     region: 'eu',
     onExitRequested: () => console.log('Exit Requested'),

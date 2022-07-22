@@ -57,11 +57,11 @@ to change the chart size.
 config = {
   region: "<yourRegion>",
   workspaceKey: "<yourWorkspacePublicKey>",
-    event: "<yourEventKey>",
-    onRenderStarted: (chart) => {
-      console.info('Render Started')
-    }
+  event: "<yourEventKey>",
+  onRenderStarted: (chart) => {
+    console.info('Render Started')
   }
+}
 ```
 
 If you store the chart object that's passed to `onRenderStarted`, you can access the properties defined on the  wrapped `seatsio.SeatingChart`:
@@ -73,8 +73,8 @@ config = {
     region: "<yourRegion>",
     workspaceKey: "<yourWorkspacePublicKey>",
     event: "<yourEventKey>",
-    onRenderStarted: {createdChart => { chart = createdChart }}
-  }
+    onRenderStarted: createdChart => { chart = createdChart }
+}
 ```
 
 ### onChartRendered
@@ -89,7 +89,7 @@ config = {
     onRenderRendered: (chart) => {
       console.info('Render Finished')
     }
-  }
+}
 ```
 
 ### Other parameters
@@ -101,13 +101,13 @@ config = {
     region: "<yourRegion>",
     workspaceKey: "<yourWorkspacePublicKey>",
     event: "<yourEventKey>",
-    pricing: {[
+    pricing: [
         {'category': 1, 'price': 30},
         {'category': 2, 'price': 40},
         {'category': 3, 'price': 50}
-    ]},
+    ],
     priceFormatter: price => ('$' + price)
-  }
+}
 ```
 
 ## Event manager
@@ -122,9 +122,9 @@ eventManagerConfig = {
 ```
 
 ```html
-<si-seatsio-event-manager
-  [config]="eventManagerConfig"
-></si-seatsio-event-manager>
+<div style="height: 500px">
+    <si-seatsio-event-manager [config]="eventManagerConfig"></si-seatsio-event-manager>
+</div>
 ```
 
 Other parameters are supported as well. For a full list, check https://docs.seats.io/docs/event-manager-configuring
@@ -141,9 +141,9 @@ chartManagerConfig = {
 ```
 
 ```html
-<si-seatsio-chart-manager
-  [config]="chartManagerConfig"
-></si-seatsio-chart-manager>
+<div style="height: 500px">
+    <si-seatsio-chart-manager [config]="chartManagerConfig"></si-seatsio-chart-manager>
+</div>
 ```
 
 Other parameters are supported as well. For a full list, check https://docs.seats.io/docs/chart-manager-configuring
@@ -166,9 +166,9 @@ seatingChartConfig = {
 }
 ```
 ```html
-<si-seatsio-designer
-  [config]="seatingChartConfig"
-></si-seatsio-designer>
+<div style="height: 500px">
+    <si-seatsio-designer [config]="seatingChartConfig"></si-seatsio-designer>
+</div>
 ```
 
 To be able to edit a chart from an embedded designer, you need to specify the chart to load:
@@ -186,16 +186,6 @@ seatingChartConfig = {
     console.info('Render Finished')
   },
   priceFormatter: price => ('$' + price)
-}
-```
-
-### Setting a height
-
-By default, the chart designer gets rendered with a minimal height. To change that, use CSS on the div that gets created by `<si-seatsio-designer>`:
-
-```css
-#chart {
-    height: 800px; // or height: 100%, or height: 100vh, depending on your requirements
 }
 ```
 
