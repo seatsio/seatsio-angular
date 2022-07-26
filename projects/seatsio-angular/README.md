@@ -94,7 +94,7 @@ config = {
 
 ### Other parameters
 
-Other parameters are supported as well. For a full list, check https://docs.seats.io/docs/renderer-configure-your-floor-plan
+Other parameters are supported as well. For a full list, check https://docs.seats.io/docs/renderer/embed-a-floor-plan
 
 ```js
 config = {
@@ -191,4 +191,4 @@ seatingChartConfig = {
 
 ### Other parameters
 
-Other parameters are supported as well. For a full list, check https://docs.seats.io/docs/embedded-designer-configuration
+Other parameters are supported as well. For a full list, check https://docs.seats.io/docs/embedded-designer/introduction
