@@ -111,7 +111,6 @@
       }
     }
   },
-  "defaultProject": "seatsio-ngx",
   "cli": {
     "analytics": false
   }
