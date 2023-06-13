@@ -20,7 +20,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/seatsio-angular/tsconfig.lib.json",
+              "projects/seatsio-angular/tsconfig.lib.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -111,5 +111,8 @@
       }
     }
   },
-  "defaultProject": "seatsio-ngx"
+  "defaultProject": "seatsio-ngx",
+  "cli": {
+    "analytics": false
+  }
 }

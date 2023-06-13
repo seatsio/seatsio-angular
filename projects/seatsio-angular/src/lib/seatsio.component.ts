@@ -22,6 +22,7 @@ export class SeatsioComponent implements OnInit, OnDestroy {
     this.config['container'] = this.elRef.nativeElement.firstElementChild;
 
     if ('onRenderStarted' in this.config) {
+      // @ts-ignore
       this.config['onRenderStarted']();
     }
 
