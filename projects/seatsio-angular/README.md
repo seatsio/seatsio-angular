@@ -129,25 +129,6 @@ eventManagerConfig = {
 
 Other parameters are supported as well. For a full list, check https://docs.seats.io/docs/event-manager-configuring
 
-## Chart manager
-
-```js
-chartManagerConfig = {
-  region: "<yourRegion>",
-  secretKey: "<yourWorkspaceSecretKey>",
-  chart: "<yourChartKey>",
-  mode: "manageRulesets"
-}
-```
-
-```html
-<div style="height: 500px">
-    <si-seatsio-chart-manager [config]="chartManagerConfig"></si-seatsio-chart-manager>
-</div>
-```
-
-Other parameters are supported as well. For a full list, check https://docs.seats.io/docs/chart-manager-configuring
-
 ## Seating Chart Designer
 
 To embed the seating chart designer for the purpose of creating a new chart, do this:
