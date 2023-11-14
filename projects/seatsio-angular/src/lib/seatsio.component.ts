@@ -1,19 +1,20 @@
 import {Component, ElementRef, Input, OnDestroy, OnInit} from '@angular/core';
-import {SeatsioService} from './seatsio.service';
+import {EmbeddableProps, SeatsioService} from './seatsio.service';
+import {CommonConfigOptions, SeatingChart} from '@seatsio/seatsio-types';
 
 @Component({template: ''})
-export class SeatsioComponent implements OnInit, OnDestroy {
+export class SeatsioComponent<T extends CommonConfigOptions> implements OnInit, OnDestroy {
 
-  @Input() config: object;
+  @Input() config: EmbeddableProps<T>;
 
   seatsioService: SeatsioService;
-  chart: any;
+  chart: SeatingChart;
 
   constructor(seatsioService: SeatsioService, private elRef: ElementRef) {
     this.seatsioService = seatsioService;
   }
 
-  protected render(config: any) {
+  protected render(config: EmbeddableProps<T>): Promise<SeatingChart> {
     throw new Error('Not implemented');
   }
 
@@ -21,12 +22,11 @@ export class SeatsioComponent implements OnInit, OnDestroy {
     this.config['divId'] = undefined;
     this.config['container'] = this.elRef.nativeElement.firstElementChild;
 
-    if ('onRenderStarted' in this.config) {
-      // @ts-ignore
-      this.config['onRenderStarted']();
-    }
-
     this.chart = await this.render(this.config);
+
+    if ('onRenderStarted' in this.config) {
+      this.config['onRenderStarted'](this.chart);
+    }
   }
 
   ngOnDestroy() {
@@ -35,3 +35,4 @@ export class SeatsioComponent implements OnInit, OnDestroy {
     }
   }
 }
+

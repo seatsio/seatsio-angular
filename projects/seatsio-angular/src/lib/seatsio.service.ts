@@ -1,14 +1,22 @@
 import {Injectable, OnDestroy, OnInit} from '@angular/core';
+import {
+  ChartDesignerConfigOptions,
+  ChartRendererConfigOptions,
+  EventManagerConfigOptions,
+  Region,
+  SeatingChart,
+  Seatsio
+} from '@seatsio/seatsio-types';
 
-declare var seatsio: any;
+declare var seatsio: Seatsio;
 
 @Injectable({
   providedIn: 'root'
 })
 export class SeatsioService implements OnInit, OnDestroy {
-  chart: any;
+  chart: SeatingChart;
 
-  async showDesigner(config) {
+  async showDesigner(config: EmbeddableProps<ChartDesignerConfigOptions>) {
     const seatsioInstance = await this.getSeatsio(config.region, config.chartJsUrl);
 
     delete config['chartJsUrl'];
@@ -16,7 +24,7 @@ export class SeatsioService implements OnInit, OnDestroy {
     return new seatsioInstance.SeatingChartDesigner(config).render();
   }
 
-  async showSeatingChart(config) {
+  async showSeatingChart(config: EmbeddableProps<ChartRendererConfigOptions>) {
     const seatsioInstance = await this.getSeatsio(config.region, config.chartJsUrl);
 
     delete config['chartJsUrl'];
@@ -24,20 +32,12 @@ export class SeatsioService implements OnInit, OnDestroy {
     return new seatsioInstance.SeatingChart(config).render();
   }
 
-  async showEventManager(config) {
+  async showEventManager(config: EmbeddableProps<EventManagerConfigOptions>) {
     const seatsioInstance = await this.getSeatsio(config.region, config.chartJsUrl);
 
     delete config['chartJsUrl'];
     delete config['region'];
     return new seatsioInstance.EventManager(config).render();
-  }
-
-  async showChartManager(config) {
-    const seatsioInstance = await this.getSeatsio(config.region, config.chartJsUrl);
-
-    delete config['chartJsUrl'];
-    delete config['region'];
-    return new seatsioInstance.ChartManager(config).render();
   }
 
   getSeatsio(region, chartJsUrl) {
@@ -48,7 +48,7 @@ export class SeatsioService implements OnInit, OnDestroy {
   }
 
   loadSeatsio(region, chartJsUrl = 'https://cdn-{region}.seatsio.net/chart.js') {
-    return new Promise((resolve, reject) => {
+    return new Promise<Seatsio>((resolve, reject) => {
       const script: HTMLScriptElement = document.createElement('script');
       script.onload = () => resolve(seatsio);
       script.onerror = () => reject(`Could not load ${script.src}`);
@@ -63,3 +63,9 @@ export class SeatsioService implements OnInit, OnDestroy {
   ngOnInit(): void {
   }
 }
+
+export type EmbeddableProps<T> = {
+  onRenderStarted?: (chart: SeatingChart) => void
+  chartJsUrl?: string
+  region: Region
+} & T;
