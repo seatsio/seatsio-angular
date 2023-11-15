@@ -36,9 +36,9 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org/
-      - run: npm install
-      - run: npm install -g @angular/cli
+      - run: yarn install
+      - run: yarn global add @angular/cli
       - run: ng build seatsio-angular
-      - run: npm publish ./dist/seatsio-angular
+      - run: yarn publish ./dist/seatsio-angular
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

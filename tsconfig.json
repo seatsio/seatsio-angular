@@ -26,9 +26,5 @@
         "dist/seatsio-angular/*"
       ]
     }
-  },
-  "angularCompilerOptions": {
-    "enableIvy": true,
-    "compilationMode": "partial"
   }
 }
