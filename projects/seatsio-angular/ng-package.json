@@ -3,5 +3,8 @@
   "dest": "../../dist/seatsio-angular",
   "lib": {
     "entryFile": "src/public_api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": [
+    "@seatsio/seatsio-types"
+  ]
 }

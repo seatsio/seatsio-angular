@@ -17,6 +17,9 @@
     "javascript"
   ],
   "homepage": "https://github.com/seatsio/seatsio-angular",
+  "dependencies": {
+    "@seatsio/seatsio-types": "2.0.1"
+  },
   "peerDependencies": {
     "@angular/common": ">=16.0.0",
     "@angular/core": ">=16.0.0"
