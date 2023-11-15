@@ -8,4 +8,4 @@ updates:
   - package-ecosystem: npm
     directory: "/projects/seatsio-angular"
     schedule:
-      interval: daily
+      interval: monthly
