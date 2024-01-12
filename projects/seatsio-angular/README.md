@@ -1,4 +1,4 @@
-# seatsio-angular, the official Seats.io Angular wrapper
+# seatsio-angular, the official Seats.io Angular SDK
 
 Angular wrapper for rendering [Seats.io](https://www.seats.io) seating charts. Brought to you by the Seats.io team.
 
