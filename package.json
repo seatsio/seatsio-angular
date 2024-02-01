@@ -24,7 +24,7 @@
     "@angular/cli": "17.0.8",
     "@angular/compiler-cli": "16.1.0",
     "@angular/language-service": "17.0.8",
-    "@types/node": "20.10.6",
+    "@types/node": "20.11.14",
     "codelyzer": "6.0.2",
     "ng-packagr": "16.2.3",
     "ts-node": "10.9.2",
