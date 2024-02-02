@@ -1,4 +1,4 @@
-# seatsio-angular, the official Seats.io Angular wrapper
+# seatsio-angular, the official Seats.io Angular SDK
 
 Angular wrapper for rendering [Seats.io](https://www.seats.io) seating charts. Brought to you by the Seats.io team.
 
@@ -36,6 +36,9 @@ import { SeatsioAngularModule } from '@seatsio/seatsio-angular';
 Make sure you expose `config` in your component. For example:
 
 ```js
+import {ChartRendererConfigOptions} from '@seatsio/seatsio-types';
+import {EmbeddableProps} from 'seatsio-angular';
+
 const config: EmbeddableProps<ChartRendererConfigOptions> = {
     region: "<yourRegion>", // e.g. "eu"
     workspaceKey: "<yourWorkspacePublicKey>",
@@ -56,6 +59,9 @@ to change the chart size.
 `onRenderStarted` is fired when the chart has started loading, but hasn't rendered yet:
 
 ```js
+import {ChartRendererConfigOptions} from '@seatsio/seatsio-types';
+import {EmbeddableProps} from 'seatsio-angular';
+
 const config: EmbeddableProps<ChartRendererConfigOptions> = {
   region: "<yourRegion>",
   workspaceKey: "<yourWorkspacePublicKey>",
@@ -69,6 +75,9 @@ const config: EmbeddableProps<ChartRendererConfigOptions> = {
 If you store the chart object that's passed to `onRenderStarted`, you can access the properties defined on the  wrapped `seatsio.SeatingChart`:
 
 ```js
+import {ChartRendererConfigOptions} from '@seatsio/seatsio-types';
+import {EmbeddableProps} from 'seatsio-angular';
+
 let chart = null
 
 const config: EmbeddableProps<ChartRendererConfigOptions> = {
@@ -84,6 +93,9 @@ const config: EmbeddableProps<ChartRendererConfigOptions> = {
 `onChartRendered` is fired when the chart is rendered successfully:
 
 ```js
+import {ChartRendererConfigOptions} from '@seatsio/seatsio-types';
+import {EmbeddableProps} from 'seatsio-angular';
+
 const config: EmbeddableProps<ChartRendererConfigOptions> = {
     region: "<yourRegion>",
     workspaceKey: "<yourWorkspacePublicKey>",
@@ -99,6 +111,9 @@ const config: EmbeddableProps<ChartRendererConfigOptions> = {
 Other parameters are supported as well. For a full list, check https://docs.seats.io/docs/renderer/embed-a-floor-plan
 
 ```js
+import {ChartRendererConfigOptions} from '@seatsio/seatsio-types';
+import {EmbeddableProps} from 'seatsio-angular';
+
 const config: EmbeddableProps<ChartRendererConfigOptions> = {
     region: "<yourRegion>",
     workspaceKey: "<yourWorkspacePublicKey>",
@@ -115,6 +130,9 @@ const config: EmbeddableProps<ChartRendererConfigOptions> = {
 ## Event manager
 
 ```js
+import {EventManagerConfigOptions} from '@seatsio/seatsio-types';
+import {EmbeddableProps} from 'seatsio-angular';
+
 const eventManagerConfig: EmbeddableProps<EventManagerConfigOptions> = {
   region: "<yourRegion>",
   secretKey: "<yourWorkspaceSecretKey>",
@@ -135,6 +153,9 @@ Other parameters are supported as well. For a full list, check https://docs.seat
 
 To embed the seating chart designer for the purpose of creating a new chart, do this:
 ```js
+import {ChartDesignerConfigOptions} from '@seatsio/seatsio-types';
+import {EmbeddableProps} from 'seatsio-angular';
+
 const designerConfig: EmbeddableProps<ChartDesignerConfigOptions> = {
   region: "<yourRegion>",
   secretKey: "<yourWorkspaceSecretKey>"
@@ -149,6 +170,9 @@ const designerConfig: EmbeddableProps<ChartDesignerConfigOptions> = {
 To be able to edit a chart from an embedded designer, you need to specify the chart to load:
  
 ```js
+import {ChartDesignerConfigOptions} from '@seatsio/seatsio-types';
+import {EmbeddableProps} from 'seatsio-angular';
+
 const designerConfig: EmbeddableProps<ChartDesignerConfigOptions> = {
   region: "<yourRegion>",
   secretKey: "<yourWorkspaceSecretKey>",
