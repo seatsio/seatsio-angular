@@ -21,10 +21,10 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "16.2.9",
-    "@angular/cli": "18.0.1",
+    "@angular/cli": "18.0.2",
     "@angular/compiler-cli": "16.1.0",
-    "@angular/language-service": "18.0.0",
-    "@types/node": "20.12.12",
+    "@angular/language-service": "18.0.1",
+    "@types/node": "20.14.0",
     "codelyzer": "6.0.2",
     "ng-packagr": "16.2.3",
     "ts-node": "10.9.2",
