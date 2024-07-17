@@ -22,13 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: fregante/setup-git-user@v2
-      - id: install-zx
-        run: npm i -g zx
-      - id: install-semver-tool
-        run: |
-          wget -O /usr/local/bin/semver https://raw.githubusercontent.com/fsaintjacques/semver-tool/master/src/semver
-          chmod +x /usr/local/bin/semver
-      - run: zx ./release.mjs -v $VERSION_TO_BUMP
+      - run: yarn zx ./release.mjs -v $VERSION_TO_BUMP
         env:
           VERSION_TO_BUMP: ${{ inputs.versionToBump }}
           GH_TOKEN: ${{ github.token }}
@@ -37,8 +31,6 @@ jobs:
           node-version: 18
           registry-url: https://registry.npmjs.org/
       - run: yarn install
-      - run: yarn global add @angular/cli
-      - run: ng build seatsio-angular
       - run: yarn publish ./dist/seatsio-angular
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

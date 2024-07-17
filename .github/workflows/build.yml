@@ -18,5 +18,4 @@ jobs:
           node-version: 18
           registry-url: https://registry.npmjs.org/
       - run: yarn install
-      - run: yarn global add @angular/cli
-      - run: ng build seatsio-angular
+      - run: yarn ng build seatsio-angular
