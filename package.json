@@ -17,7 +17,7 @@
     "@angular/platform-browser": "16.1.0",
     "@angular/platform-browser-dynamic": "16.1.0",
     "@angular/router": "16.1.0",
-    "@seatsio/seatsio-types": "4.1.1"
+    "@seatsio/seatsio-types": "5.1.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "16.2.9",
