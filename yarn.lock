@@ -2184,10 +2184,10 @@
     "@angular-devkit/schematics" "20.0.0"
     jsonc-parser "3.3.1"
 
-"@seatsio/seatsio-types@5.10.0":
-  version "5.10.0"
-  resolved "https://registry.yarnpkg.com/@seatsio/seatsio-types/-/seatsio-types-5.10.0.tgz#07c0daf446f7074813215e9ee763d954e6601d2f"
-  integrity sha512-thUJdvzTkBxfuEbHxlnZD633f2vP9laVoX9DWArCstdE2J1q69AHEOINhsKZ64EMMM2L7S0KIWjIA92g3gzeFA==
+"@seatsio/seatsio-types@6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@seatsio/seatsio-types/-/seatsio-types-6.1.0.tgz#f28dd0091175db13377aede2d908bffb0882de21"
+  integrity sha512-5Bi8rCMTM3o5Yo4ZSnxE4SiC4N7iGat/mII8nQ60O2FAQQS2UV7gZxgGTo8Re8DAR9a9OAxwYc6zMbXI/77bCg==
 
 "@sigstore/bundle@^3.1.0":
   version "3.1.0"
