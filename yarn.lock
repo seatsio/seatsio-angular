@@ -2184,10 +2184,10 @@
     "@angular-devkit/schematics" "20.0.0"
     jsonc-parser "3.3.1"
 
-"@seatsio/seatsio-types@5.10.0":
-  version "5.10.0"
-  resolved "https://registry.yarnpkg.com/@seatsio/seatsio-types/-/seatsio-types-5.10.0.tgz#07c0daf446f7074813215e9ee763d954e6601d2f"
-  integrity sha512-thUJdvzTkBxfuEbHxlnZD633f2vP9laVoX9DWArCstdE2J1q69AHEOINhsKZ64EMMM2L7S0KIWjIA92g3gzeFA==
+"@seatsio/seatsio-types@6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@seatsio/seatsio-types/-/seatsio-types-6.1.0.tgz#f28dd0091175db13377aede2d908bffb0882de21"
+  integrity sha512-5Bi8rCMTM3o5Yo4ZSnxE4SiC4N7iGat/mII8nQ60O2FAQQS2UV7gZxgGTo8Re8DAR9a9OAxwYc6zMbXI/77bCg==
 
 "@sigstore/bundle@^3.1.0":
   version "3.1.0"
@@ -2392,12 +2392,12 @@
   dependencies:
     "@types/node" "*"
 
-"@types/node@*", "@types/node@22.15.29":
-  version "22.15.29"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.15.29.tgz#c75999124a8224a3f79dd8b6ccfb37d74098f678"
-  integrity sha512-LNdjOkUDlU1RZb8e1kOIUpN1qQUlzGkEtbVNo53vbrwDg5om6oduhm4SiUaPW5ASTXhAiP0jInWG8Qx9fVlOeQ==
+"@types/node@*", "@types/node@24.0.8":
+  version "24.0.8"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.0.8.tgz#98f50977fe76ab78d02fc3bcb7f6c3b5f79a363c"
+  integrity sha512-WytNrFSgWO/esSH9NbpWUfTMGQwCGIKfCmNlmFDNiI5gGhgMmEA+V1AEvKLeBNvvtBnailJtkrEa2OIISwrVAA==
   dependencies:
-    undici-types "~6.21.0"
+    undici-types "~7.8.0"
 
 "@types/qs@*":
   version "6.14.0"
@@ -7171,10 +7171,10 @@ typescript@5.1.6:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.1.6.tgz#02f8ac202b6dad2c0dd5e0913745b47a37998274"
   integrity sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==
 
-undici-types@~6.21.0:
-  version "6.21.0"
-  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.21.0.tgz#691d00af3909be93a7faa13be61b3a5b50ef12cb"
-  integrity sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==
+undici-types@~7.8.0:
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-7.8.0.tgz#de00b85b710c54122e44fbfd911f8d70174cd294"
+  integrity sha512-9UJ2xGDvQ43tYyVMpuHlsgApydB8ZKfVYTsLDhXkFL/6gfkp+U8xTGdh8pMJv1SpZna0zxG1DwsKZsreLbXBxw==
 
 unicode-canonical-property-names-ecmascript@^2.0.0:
   version "2.0.1"

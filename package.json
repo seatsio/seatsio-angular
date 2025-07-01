@@ -24,7 +24,7 @@
     "@angular/cli": "20.0.0",
     "@angular/compiler-cli": "16.1.0",
     "@angular/language-service": "20.0.0",
-    "@types/node": "22.15.29",
+    "@types/node": "24.0.8",
     "codelyzer": "6.0.2",
     "ng-packagr": "16.2.3",
     "semver": "7.7.2",
