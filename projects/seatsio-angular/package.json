@@ -18,7 +18,7 @@
   ],
   "homepage": "https://github.com/seatsio/seatsio-angular",
   "dependencies": {
-    "@seatsio/seatsio-types": "6.1.0"
+    "@seatsio/seatsio-types": "6.4.0"
   },
   "peerDependencies": {
     "@angular/common": ">=16.0.0",
