@@ -118,12 +118,14 @@ const config: EmbeddableProps<ChartRendererConfigOptions> = {
     region: "<yourRegion>",
     workspaceKey: "<yourWorkspacePublicKey>",
     event: "<yourEventKey>",
-    pricing: [
+    pricing: {
+      priceFormatter: price => ('$' + price),
+      prices: [
         {'category': 1, 'price': 30},
         {'category': 2, 'price': 40},
         {'category': 3, 'price': 50}
-    ],
-    priceFormatter: price => ('$' + price)
+      ]
+    }
 }
 ```
 
