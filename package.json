@@ -21,9 +21,9 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "16.2.9",
-    "@angular/cli": "21.0.1",
+    "@angular/cli": "21.0.4",
     "@angular/compiler-cli": "16.1.0",
-    "@angular/language-service": "21.0.1",
+    "@angular/language-service": "21.0.6",
     "@types/node": "25.0.3",
     "codelyzer": "6.0.2",
     "ng-packagr": "16.2.3",
