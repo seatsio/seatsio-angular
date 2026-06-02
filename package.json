@@ -16,14 +16,14 @@
     "@angular/forms": "16.1.0",
     "@angular/platform-browser": "16.1.0",
     "@angular/platform-browser-dynamic": "16.1.0",
-    "@angular/router": "16.1.0",
-    "@seatsio/seatsio-types": "6.16.0"
+    "@angular/router": "16.1.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "16.2.9",
     "@angular/cli": "21.2.13",
     "@angular/compiler-cli": "16.1.0",
     "@angular/language-service": "21.2.15",
+    "@seatsio/seatsio-types": "6.16.0",
     "@types/node": "25.9.1",
     "codelyzer": "6.0.2",
     "ng-packagr": "16.2.3",
