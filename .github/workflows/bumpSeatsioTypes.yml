@@ -1,0 +1,77 @@
+name: Bump @seatsio/seatsio-types version
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'New version for @seatsio/seatsio-types'
+        required: true
+        type: string
+
+jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Validate version format
+        env:
+          VERSION: ${{ github.event.inputs.version }}
+        run: |
+          if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+([-.].+)?$ ]]; then
+            echo "::error::Invalid version '$VERSION'. Expected something like 6.16.0"
+            exit 1
+          fi
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Update package.json files
+        env:
+          VERSION: ${{ github.event.inputs.version }}
+        run: |
+          PKG="@seatsio/seatsio-types"
+          for file in package.json projects/seatsio-angular/package.json; do
+            [ -f "$file" ] || { echo "Skipping $file (not found)"; continue; }
+            updated=0
+            for section in dependencies devDependencies peerDependencies; do
+              if jq -e --arg pkg "$PKG" --arg s "$section" '.[$s] // {} | has($pkg)' "$file" > /dev/null; then
+                jq --arg pkg "$PKG" --arg v "$VERSION" --arg s "$section" '.[$s][$pkg] = $v' \
+                  "$file" > "$file.tmp" && mv "$file.tmp" "$file"
+                echo "Updated $PKG to $VERSION in $file ($section)"
+                updated=1
+              fi
+            done
+            [ "$updated" -eq 1 ] || echo "Skipping $file ($PKG not found)"
+          done
+
+      - name: Update yarn.lock files
+        run: |
+          for dir in . projects/seatsio-angular; do
+            if [ -f "$dir/package.json" ]; then
+              echo "Running yarn install in $dir"
+              ( cd "$dir" && yarn install )
+            fi
+          done
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          commit-message: "chore: bump @seatsio/seatsio-types to ${{ github.event.inputs.version }}"
+          title: "Bump @seatsio/seatsio-types to ${{ github.event.inputs.version }}"
+          body: |
+            Updates `@seatsio/seatsio-types` to `${{ github.event.inputs.version }}` and refreshes `yarn.lock`.
+          branch: "bump/seatsio-types-${{ github.event.inputs.version }}"
+          base: master
+          add-paths: |
+            package.json
+            yarn.lock
+            projects/seatsio-angular/package.json
+            projects/seatsio-angular/yarn.lock
