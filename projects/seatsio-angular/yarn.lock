@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@seatsio/seatsio-types@6.16.0":
-  version "6.16.0"
-  resolved "https://registry.yarnpkg.com/@seatsio/seatsio-types/-/seatsio-types-6.16.0.tgz#6233b7aa794e8cd890399b54894eb4ee162aea91"
-  integrity sha512-8xOgaJgBSYR17jRz9JXZo147hO2+XqWIMpwOy+7e7s/VF8QPQZPVX9MADGvjCD58mUmtG3KEKABNX3t6IaOBqg==
+"@seatsio/seatsio-types@6.17.0":
+  version "6.17.0"
+  resolved "https://registry.yarnpkg.com/@seatsio/seatsio-types/-/seatsio-types-6.17.0.tgz#df5f931965990b899972196b9f8f9bd8ae55f63e"
+  integrity sha512-l42EYnCfNg/MumRePItL73Z5V5ltrmz5o+8i7gPcop+C1uFjCFPg2Kku6V0rSJ9rJ4Wi9tEjmi0mo7aE8SzZUg==
