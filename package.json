@@ -17,7 +17,7 @@
     "@angular/platform-browser": "22.0.4",
     "@angular/platform-browser-dynamic": "16.1.0",
     "@angular/router": "16.1.0",
-    "@seatsio/seatsio-types": "6.16.0"
+    "@seatsio/seatsio-types": "6.17.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "16.2.9",
@@ -27,7 +27,7 @@
     "@types/node": "25.9.1",
     "codelyzer": "6.0.2",
     "ng-packagr": "16.2.3",
-    "semver": "7.8.1",
+    "semver": "7.8.5",
     "ts-node": "10.9.2",
     "tslint": "6.1.3",
     "typescript": "5.1.6",
