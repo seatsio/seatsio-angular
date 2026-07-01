@@ -14,7 +14,7 @@
     "@angular/compiler": "16.1.0",
     "@angular/core": "16.1.0",
     "@angular/forms": "16.1.0",
-    "@angular/platform-browser": "16.1.0",
+    "@angular/platform-browser": "22.0.4",
     "@angular/platform-browser-dynamic": "16.1.0",
     "@angular/router": "16.1.0",
     "@seatsio/seatsio-types": "6.16.0"
