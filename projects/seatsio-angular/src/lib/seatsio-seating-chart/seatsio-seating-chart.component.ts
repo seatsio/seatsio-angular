@@ -1,12 +1,14 @@
-import {Component, ElementRef} from '@angular/core';
+import {Component, ElementRef, ChangeDetectionStrategy} from '@angular/core';
 import {EmbeddableProps, SeatsioService} from '../seatsio.service';
 import {SeatsioComponent} from '../seatsio.component';
 import {ChartRendererConfigOptions} from '@seatsio/seatsio-types';
 
 @Component({
-  selector: 'si-seatsio-seating-chart',
-  templateUrl: '../seatsio.component.html',
-  providers: [SeatsioService]
+    selector: 'si-seatsio-seating-chart',
+    templateUrl: '../seatsio.component.html',
+    providers: [SeatsioService],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class SeatsioSeatingChartComponent extends SeatsioComponent<ChartRendererConfigOptions> {
 

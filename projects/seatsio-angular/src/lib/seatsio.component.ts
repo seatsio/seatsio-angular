@@ -1,8 +1,12 @@
-import {Component, ElementRef, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, ElementRef, Input, OnDestroy, OnInit, ChangeDetectionStrategy} from '@angular/core';
 import {EmbeddableProps, SeatsioService} from './seatsio.service';
 import {CommonConfigOptions, SeatingChart} from '@seatsio/seatsio-types';
 
-@Component({template: ''})
+@Component({
+    template: '',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
+})
 export class SeatsioComponent<T extends CommonConfigOptions> implements OnInit, OnDestroy {
 
   @Input() config: EmbeddableProps<T>;
@@ -14,7 +18,7 @@ export class SeatsioComponent<T extends CommonConfigOptions> implements OnInit, 
     this.seatsioService = seatsioService;
   }
 
-  protected render(config: EmbeddableProps<T>): Promise<SeatingChart> {
+  protected render(_config: EmbeddableProps<T>): Promise<SeatingChart> {
     throw new Error('Not implemented');
   }
 
