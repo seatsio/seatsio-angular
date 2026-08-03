@@ -1,13 +1,11 @@
-import {Component, ChangeDetectionStrategy} from '@angular/core';
+import {Component} from '@angular/core';
 import {ChartDesignerConfigOptions, ChartRendererConfigOptions, EventManagerConfigOptions} from '@seatsio/seatsio-types';
 import {EmbeddableProps} from 'seatsio-angular';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'Seatsio-angular test page';
@@ -28,9 +26,11 @@ export class AppComponent {
     chartJsUrl: 'https://cdn-staging-{region}.seatsio.net/chart.js',
     region: 'eu',
     onRenderStarted: () => {
+      // tslint:disable-next-line:no-console
       console.info('Render Started');
     },
     onChartRendered: () => {
+      // tslint:disable-next-line:no-console
       console.info('Render Finished');
     },
     priceFormatter: price => ('$' + price)
@@ -43,6 +43,7 @@ export class AppComponent {
     event: 'fullExampleWithoutSectionsEvent',
     mode: 'manageObjectStatuses',
     onChartRendered: () => {
+      // tslint:disable-next-line:no-console
       console.info('Render Finished');
     }
   })
