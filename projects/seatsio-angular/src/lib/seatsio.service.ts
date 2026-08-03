@@ -1,4 +1,4 @@
-import {Injectable, OnDestroy, OnInit} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {
   ChartDesignerConfigOptions,
   ChartRendererConfigOptions,
@@ -8,12 +8,12 @@ import {
   Seatsio
 } from '@seatsio/seatsio-types';
 
-declare var seatsio: Seatsio;
+declare const seatsio: Seatsio;
 
 @Injectable({
   providedIn: 'root'
 })
-export class SeatsioService implements OnInit, OnDestroy {
+export class SeatsioService {
   chart: SeatingChart;
 
   async showDesigner(config: EmbeddableProps<ChartDesignerConfigOptions>) {
@@ -55,12 +55,6 @@ export class SeatsioService implements OnInit, OnDestroy {
       script.src = chartJsUrl.replace('{region}', region);
       document.head.appendChild(script);
     });
-  }
-
-  ngOnDestroy(): void {
-  }
-
-  ngOnInit(): void {
   }
 }
 
