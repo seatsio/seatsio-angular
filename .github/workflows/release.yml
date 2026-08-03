@@ -25,7 +25,6 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 24
-          registry-url: https://registry.npmjs.org/
       - run: yarn install
       - run: yarn zx ./release.mjs -v $VERSION_TO_BUMP
         env:
@@ -33,6 +32,10 @@ jobs:
           GH_TOKEN: ${{ github.token }}
       - run: yarn global add @angular/cli
       - run: ng build seatsio-angular
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org/
       - run: yarn publish ./dist/seatsio-angular
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
