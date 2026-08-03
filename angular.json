@@ -10,21 +10,20 @@
       "prefix": "si",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "builder": "@angular/build:ng-packagr",
           "options": {
             "tsConfig": "projects/seatsio-angular/tsconfig.lib.json",
             "project": "projects/seatsio-angular/ng-package.json"
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/seatsio-angular/tsconfig.lib.json"
+            "lintFilePatterns": [
+              "projects/seatsio-angular/**/*.ts",
+              "projects/seatsio-angular/**/*.html"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "eslintConfig": "projects/seatsio-angular/eslint.config.js"
           }
         }
       }
@@ -37,12 +36,15 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/testApp",
+            "outputPath": {
+              "base": "dist/testApp"
+            },
             "index": "projects/testApp/src/index.html",
-            "main": "projects/testApp/src/main.ts",
-            "polyfills": "projects/testApp/src/polyfills.ts",
+            "polyfills": [
+              "projects/testApp/src/polyfills.ts"
+            ],
             "tsConfig": "projects/testApp/tsconfig.app.json",
             "assets": [
               "projects/testApp/src/favicon.ico",
@@ -51,7 +53,8 @@
             "styles": [
               "projects/testApp/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/testApp/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -64,12 +67,9 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -77,35 +77,45 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular/build:dev-server",
           "options": {
-            "browserTarget": "testApp:build"
+            "buildTarget": "testApp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "testApp:build:production"
+              "buildTarget": "testApp:build:production"
+            },
+            "development": {
+              "buildTarget": "testApp:build:development"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "builder": "@angular/build:extract-i18n",
           "options": {
-            "browserTarget": "testApp:build"
+            "buildTarget": "testApp:build"
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/testApp/tsconfig.app.json"
+            "lintFilePatterns": [
+              "projects/testApp//**/*.ts",
+              "projects/testApp//**/*.html"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "eslintConfig": "projects/testApp/eslint.config.js"
           }
         }
       }
@@ -113,5 +123,31 @@
   },
   "cli": {
     "analytics": false
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "type": "component"
+    },
+    "@schematics/angular:directive": {
+      "type": "directive"
+    },
+    "@schematics/angular:service": {
+      "type": "service"
+    },
+    "@schematics/angular:guard": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:interceptor": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:module": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:pipe": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:resolver": {
+      "typeSeparator": "."
+    }
   }
 }
