@@ -2,23 +2,21 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "ignoreDeprecations": "6.0",
     "outDir": "./dist/out-tsc",
-    "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,
     "module": "es2015",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2022",
-    "strict": false,
-    "noImplicitAny": false,
-    "strictNullChecks": false,
-    "strictPropertyInitialization": false,
+    "target": "es5",
     "typeRoots": [
       "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
     ],
     "paths": {
       "seatsio-angular": [

@@ -1,14 +1,12 @@
-import {Component, ElementRef, ChangeDetectionStrategy} from '@angular/core';
+import {Component, ElementRef} from '@angular/core';
 import {EmbeddableProps, SeatsioService} from '../seatsio.service';
 import {SeatsioComponent} from '../seatsio.component';
 import {EventManagerConfigOptions} from '@seatsio/seatsio-types';
 
 @Component({
-    selector: 'si-seatsio-event-manager',
-    templateUrl: '../seatsio.component.html',
-    providers: [SeatsioService],
-    changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false
+  selector: 'si-seatsio-event-manager',
+  templateUrl: '../seatsio.component.html',
+  providers: [SeatsioService]
 })
 export class SeatsioEventManagerComponent extends SeatsioComponent<EventManagerConfigOptions> {
 
