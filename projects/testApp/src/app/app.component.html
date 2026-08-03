@@ -18,10 +18,11 @@
       *ngIf="shown"
     ></si-seatsio-designer-->
 
-    <si-seatsio-seating-chart
-      [config]="seatingChartConfig()"
-      *ngIf="shown"
-    ></si-seatsio-seating-chart>
+    @if (shown) {
+      <si-seatsio-seating-chart
+        [config]="seatingChartConfig()"
+      ></si-seatsio-seating-chart>
+    }
 
     <!--<si-seatsio-event-manager
       [config]="eventManagerConfig()"
