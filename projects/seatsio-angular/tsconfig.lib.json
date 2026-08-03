@@ -2,16 +2,20 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "../../out-tsc/lib",
-    "target": "es2022",
-    "module": "es2022",
-    "moduleResolution": "bundler",
+    "target": "es2015",
+    "module": "es2015",
+    "moduleResolution": "node",
     "declaration": true,
     "sourceMap": true,
     "inlineSources": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "types": []
+    "types": [],
+    "lib": [
+      "dom",
+      "es2018"
+    ]
   },
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
@@ -20,7 +24,6 @@
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true,
     "enableResourceInlining": true,
-    "compilationMode": "partial",
-    "strictTemplates": false
+    "compilationMode": "partial"
   }
 }
