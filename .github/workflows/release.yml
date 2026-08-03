@@ -19,6 +19,8 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: actions/checkout@v7
       - uses: fregante/setup-git-user@v2
@@ -34,5 +36,3 @@ jobs:
       - run: yarn global add @angular/cli
       - run: ng build seatsio-angular
       - run: yarn publish ./dist/seatsio-angular
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
