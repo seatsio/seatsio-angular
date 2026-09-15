@@ -17,4 +17,22 @@ jobs:
         with:
           node-version: 24
       - run: yarn install
-      - run: yarn ng build seatsio-angular
+      - run: yarn build
+
+  notify-slack-success:
+    runs-on: ubuntu-latest
+    needs: [build]
+    if: success() && github.ref == 'refs/heads/master'
+    steps:
+      - uses: seatsio/seatsio-github-actions/slack-notify-clientlib-build-success@v2
+        with:
+          webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+  notify-slack-failure:
+    runs-on: ubuntu-latest
+    needs: [build]
+    if: failure() && github.ref == 'refs/heads/master'
+    steps:
+      - uses: seatsio/seatsio-github-actions/slack-notify-build-failure@v2
+        with:
+          webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
