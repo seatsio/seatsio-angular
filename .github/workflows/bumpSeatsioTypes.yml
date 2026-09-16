@@ -10,6 +10,9 @@ on:
 
 jobs:
   bump-version:
+    permissions:
+      contents: write
+      pull-requests: write
     uses: seatsio/seatsio-github-actions/.github/workflows/bump-seatsio-types.yml@v2
     with:
       version: ${{ github.event.inputs.version }}
