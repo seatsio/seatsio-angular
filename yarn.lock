@@ -1467,10 +1467,10 @@
     oxc-parser "0.150.0"
     typescript "6.0.3"
 
-"@seatsio/seatsio-types@6.30.0":
-  version "6.30.0"
-  resolved "https://registry.yarnpkg.com/@seatsio/seatsio-types/-/seatsio-types-6.30.0.tgz#b7d08437b94fe73670c7395270a6fbf27fff1906"
-  integrity sha512-euQYRuJA4Ng+FrHSGYEJgQuW7sslVLXtKHALsRj9Td7TBkzGT0OpaDd/bquOYkg0YmWbN1ASc5Rb6pxcObNDaA==
+"@seatsio/seatsio-types@6.31.0":
+  version "6.31.0"
+  resolved "https://registry.yarnpkg.com/@seatsio/seatsio-types/-/seatsio-types-6.31.0.tgz#1a60a5de7edeb6575925b85b9f598172513f7061"
+  integrity sha512-7UjcSk1PqXwJ/coSF0o8brYe7jzt0As9D9FZWGtnmc7JYXIOs+Hauunhw8S1CulFOSmWYbKogVV5cDywdTwSWw==
 
 "@standard-schema/spec@^1.0.0":
   version "1.1.0"
